@@ -26,7 +26,7 @@ public class Main {
         int N = file.nextInt(); // Number of modules
         ArrayList<Ruleset> rules = new ArrayList<>();
 
-
+        
         return rules;
     }
 }
