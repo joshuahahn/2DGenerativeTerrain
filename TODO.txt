@@ -1,0 +1,15 @@
+Outline of algorithm:
+
+Read in modules, assign index to each modules
+Read in module rules, inputted as a set two integers separated by a space per line. 
+    Rules read in stored as a hashset For every index, (Direction, PossibleModule)
+
+NxM array that stores all potential module rules
+    Each array cell stores a single hashset
+
+Rules file formatted as follows:
+    Number of modules
+    NorthPossible1 NorthPossible2... ,EastPossible1 EastPossible2, SouthPossible1 SouthPossible2, 
+
+TODO: 
+Function that reads in rules as a txt file
