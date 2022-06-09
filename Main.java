@@ -1,31 +1,32 @@
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.ArrayList;
-import java.io.*;
+import java.util.Scanner;
+import java.io.File;
 
 public class Main {
     public static void main(String[] args) {
-        ArrayList<HashSet<Integer>> Rules = null; // Adjacency rules
-        FileReader in = null; 
+        ArrayList<Ruleset> Rules = null; // Adjacency rules
+        Scanner in = null;
+        File file = null;
 
         try {
-            in = new FileReader("rules.txt");
+            file = new File("rules.txt");
+            in = new Scanner(file);
             Rules = readRules(in);
+            in.close();
         } 
-        catch (FileNotFoundException e){
-            System.out.println("Rule file not found. Please name file 'rules.txt'.");
+        catch (Exception e){
+            System.out.println("File input error");
             e.printStackTrace();
-        }
-        
-
-        int Entropy = 0;
-
-
-        while (Entropy != 0) {
-
         }
     }
 
-    public static ArrayList<HashSet<Integer>> readRules(FileReader file) {
-        
+    public static ArrayList<Ruleset> readRules(Scanner file) {
+        int N = file.nextInt(); // Number of modules
+        ArrayList<Ruleset> rules = new ArrayList<>();
+
+
+        return rules;
     }
 }
