@@ -24,29 +24,32 @@ public class Main {
 
     public static ArrayList<Ruleset> readRules(Scanner file) {
         int N = file.nextInt(); // Number of modules
+        String temp = file.next();
         ArrayList<Ruleset> rules = new ArrayList<>();
         
         for (int i = 0; i < N; i++) {
             Ruleset ruleset = new Ruleset(i);
-            String token = file.next();
-            while (token != "*") {
-                ruleset.North.add(Integer.parseInt(token));
-                token = file.next();
+            // Data cleanup
+            String token = file.nextLine();
+            String[] tokens = token.split(",");
+            int idx = 0;
+
+            while (tokens[idx] != "*") {
+                ruleset.setNorth(Integer.parseInt(tokens[idx]));
+                idx++;
             }
-            token = file.next();
-            while (token != "*") {
-                ruleset.East.add(Integer.parseInt(token));
-                token = file.next();
+            idx++;
+            while (tokens[idx] != "*") {
+                ruleset.setEast(Integer.parseInt(tokens[idx]));
             }
-            token = file.next();
-            while (token != "*") {
-                ruleset.South.add(Integer.parseInt(token));
-                token = file.next();
+            idx++;
+            while (tokens[idx] != "*") {
+                ruleset.setSouth(Integer.parseInt(tokens[idx]));
+                idx++;
             }
-            token = file.next();
-            while (token != "*") {
-                ruleset.West.add(Integer.parseInt(token));
-                token = file.next();
+            idx++;
+            while (tokens[idx] != "*") {
+                ruleset.setWest(Integer.parseInt(tokens[idx]));
             }
             rules.add(ruleset);
         }
