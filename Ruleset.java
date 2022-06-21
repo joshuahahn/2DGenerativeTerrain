@@ -1,5 +1,6 @@
 import java.util.HashSet;
 import java.util.ArrayList;
+import java.lang.StringBuilder;
 
 public class Ruleset {
     int index;
@@ -26,5 +27,30 @@ public class Ruleset {
     }
     public void setWest(Integer i) {
         this.rules.get(3).add(i);
+    }
+
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("North: ");
+        for (Integer i : rules.get(0)) {
+            sb.append(i);
+            sb.append(", ");
+        }
+        sb.append("East: ");
+        for (Integer i : rules.get(1)) {
+            sb.append(i);
+            sb.append(", ");
+        }
+        sb.append("South: ");
+        for (Integer i : rules.get(2)) {
+            sb.append(i);
+            sb.append(", ");
+        }
+        sb.append("West: ");
+        for (Integer i : rules.get(3)) {
+            sb.append(i);
+            sb.append(", ");
+        }
+        return sb.toString();
     }
 }
