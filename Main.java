@@ -45,15 +45,9 @@ public class Main {
 
         // TODO: Initial state modification
 
-        // Create NxM array that stores entropy of each tile
-        int[][] Entropy = new int[N][M];
-        for (int i = 0; i < N; i++) {
-            for (int j = 0; j < M; j++) {
-                Entropy[i][j] = States.get(i).get(j).size();
-                System.out.println(Entropy[i][j]);
-            }
-        }
-
+        // Entropy = total number of possible states
+        int Entropy = findEntropy(States);
+        System.out.println(Entropy);
         
     }
 
@@ -90,5 +84,15 @@ public class Main {
             rules.add(ruleset);
         }
         return rules;
+    }
+
+    public static int findEntropy(List<List<Set<Integer>>> tiles) {
+        int res = 0;
+        for (List<Set<Integer>> col : tiles) {
+            for (Set<Integer> cell : col) {
+                res += cell.size();
+            }
+        }
+        return res;
     }
 }
