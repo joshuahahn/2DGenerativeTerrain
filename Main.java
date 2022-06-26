@@ -48,6 +48,11 @@ public class Main {
         // Entropy = total number of possible states
         int Entropy = findEntropy(States);
         System.out.println(Entropy);
+
+        // Propagate while every cell has more than one possible state.
+        while (Entropy > M * N) {
+            States = propagate(States);
+        }
         
     }
 
@@ -94,5 +99,12 @@ public class Main {
             }
         }
         return res;
+    }
+
+    public static List<List<Set<Integer>>> propagate(List<List<Set<Integer>>> old) {
+        
+        
+
+        return old;
     }
 }
